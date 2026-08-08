@@ -3,4 +3,6 @@ exercism/
 iterm2/
 joplin-desktop/
 nvim/ftplugin/java.lua
+opencode/node_modules/
+opencode/package*.json
 

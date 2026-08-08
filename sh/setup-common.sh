@@ -71,11 +71,11 @@ done
 # Rebuild font cache on Linux
 
 # Link .zshrc
-printf "Link $HOME/.config/zshrc to $HOME/.zshrc? This will overwrite $HOME/.zshrc. [y/N] "
+printf "Link $HOME/.config/zsh/.zshrc to $HOME/.zshrc? This will overwrite $HOME/.zshrc. [y/N] "
 read -r answer
 case "$answer" in
-    [yY]) ln -sf "$HOME/.config/zshrc" "$HOME/.zshrc"
-        echo "Linked $HOME/.zshrc -> $HOME/.config/.zshrc" ;;
+    [yY]) ln -sf "$HOME/.config/zsh/.zshrc" "$HOME/.zshrc"
+        echo "Linked $HOME/.zshrc -> $HOME/.config/zsh/.zshrc" ;;
     *) echo "Skipping zshrc link." ;;
 esac
 

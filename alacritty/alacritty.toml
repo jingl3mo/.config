@@ -1,0 +1,33 @@
+[general]
+import = [
+    "keybindings.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+blur = false
+dimensions = { columns = 180, lines = 160 }
+opacity = 0.75
+options_as_alt = "OnlyLeft"
+position = { x = 0, y = 0 }
+resize_increments = true
+
+[scrolling]
+history = 50000
+
+[font]
+#normal = { family = "BigBlueTermPlus Nerd Font" }
+#size = 14
+normal = { family = "D2CodingLigature Nerd Font" }
+size = 16
+
+[bell]
+animation = "EaseOutExpo"
+duration = 5
+
+[cursor]
+style = { blinking = "Always" }
+blink_interval = 1000
+blink_timeout = 8

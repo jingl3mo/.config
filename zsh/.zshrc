@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin/:$HOME/gems/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin/:$HOME/gems/bin:$HOME/.opencode/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -70,7 +70,11 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-commit isodate)
+plugins=(fzf git git-commit isodate tmux)
+
+# Plugin configuration
+ZSH_TMUX_AUTOSTART=false
+ZSH_TMUX_CONFIG="$HOME/.config/.tmux.conf"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,11 +86,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -110,20 +114,12 @@ alias la='ls -a'
 alias ll='ls -l'
 alias space='du -hs * | sort -h'
 
-alias ga='git add'
-alias gc='git commit'
-alias gd='git diff'
-alias gl='git log'
-alias gs='git status'
-
-# ruby
-export GEM_HOME="$HOME/gems"
-
 # work aliases
-AMAZON_CONFIG=~/.config/sh/amazon.sh
-if [[ -f "$AMAZON_CONFIG" ]]; then
-	source "$AMAZON_CONFIG";
+WORK_CONFIG=$HOME/.config/sh/work.sh
+
+if [[ -f "$WORK_CONFIG" ]]; then
+  source "$WORK_CONFIG";
 else
-	echo "$AMAZON_CONFIG not found. Skipping work setup.";
+  echo "$WORK_CONFIG not found. Skipping work setup.";
 fi
 

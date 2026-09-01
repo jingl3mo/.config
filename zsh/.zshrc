@@ -115,7 +115,8 @@ alias ll='ls -l'
 alias space='du -hs * | sort -h'
 
 # work aliases
-WORK_CONFIG=~/.config/sh/amazon.sh
+WORK_CONFIG=$HOME/.config/sh/work.sh
+
 if [[ -f "$WORK_CONFIG" ]]; then
   source "$WORK_CONFIG";
 else

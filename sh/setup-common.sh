@@ -41,6 +41,16 @@ else
     tar -xvzf "$tmpdir/tpm.tar.gz" --strip-components 1 -C "$TPM_DIR"
 fi
 
+# Install opencode
+OPENCODE_DIR="$HOME/.opencode"
+if [ -d "$OPENCODE_DIR" ]; then
+    echo "opencode is already installed, skipping."
+else
+    echo "Installing opencode..."
+    sh -c "$(curl -fsSL https://opencode.ai/install)" "" --unattended
+fi
+
+
 # Install fonts
 case "$(uname -s)" in
     Darwin) FONT_DIR="$HOME/Library/Fonts";;

@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin/:$HOME/gems/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin/:$HOME/gems/bin:$HOME/.opencode/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
